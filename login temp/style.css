@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222b6f7f;
+    font-family: "Poppins", sans-serif;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  .box {
+    width: 450px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .face {
+    width: 95px;
+    height: 95px;
+    background-color: gold;
+    border-radius: 50%;
+    position: relative;
+  }
+  .eye {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background-color: black;
+    border-radius: 50%;
+    left: 25%;
+    top: 30%;
+  }
+  .eye:nth-child(2) {
+    left: unset;
+    right: 25%;
+  }
+  .eye-blink-upper,
+  .eye-blink-lower {
+    position: absolute;
+    width: 100%;
+    background-color: aliceblue;
+    content: "";
+    inset: 0;
+    transform: translateY(-100%);
+    background-color: #ffd700;
+    transition: transform .3s ease;
+  }
+  .eye-blink-lower {
+    transform: translateY(100%);
+  }
+  .mouth {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 12px;
+    bottom: 25%;
+    background-color: black;
+    border-radius: 0 0 50% 50%;
+  }
+  .box-inner {
+    width: 100%;
+    height: calc(100% - 110px);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .username,
+  .password {
+    font: inherit;
+    font-size: 15px;
+    border: none;
+    padding: 8px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  .submit-btn {
+    font: inherit;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #2c3674;
+    width: 100px;
+    color: black;
+    position: relative;
+    overflow: hidden;
+  }
+  .submit-btn::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background-color: gold;
+    z-index: -1;
+    transform:translateX(-110%) skewX(30deg);
+    width: 150%;
+    transition: transform .3s ease;
+  }
+  .submit-btn:hover::after{
+    transform: translateX(-20%) skewX(30deg);
+  }
